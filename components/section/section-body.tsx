@@ -10,7 +10,7 @@ const SectionBody = ({ items }: { items: Movie[] }) => {
     <ScrollView
       horizontal
       showsHorizontalScrollIndicator={false}
-      className="px-4 space-x-4 my-2"
+      className="px-4 space-x-4 mt-2"
     >
       {items.map((item) => (
         <MovieCard

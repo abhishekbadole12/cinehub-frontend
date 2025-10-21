@@ -23,8 +23,8 @@ export default function HomeScreen() {
   const posters = movies.slice(0, 5).map((m) => m.backdrop_path) as string[];
 
   return (
-    <SafeAreaView className="flex-1 bg-black " edges={["top"]}>
-      <ScrollView showsVerticalScrollIndicator={false} >
+    <SafeAreaView className="flex-1 bg-black pb-2" edges={["top"]}>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <HeaderBar />
 
         {posters.length > 0 && <Carousel images={posters} />}
