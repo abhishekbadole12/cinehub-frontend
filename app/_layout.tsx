@@ -4,7 +4,9 @@ import "react-native-reanimated";
 
 import "../global.css";
 
+// Context
 import { ThemeProvider, useTheme } from "@/context/ThemeContext";
+import { DimensionsProvider } from "@/context/useDimensionContext";
 
 export const unstable_settings = {
   anchor: "(tabs)",
@@ -13,7 +15,9 @@ export const unstable_settings = {
 export default function RootLayout() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <DimensionsProvider>
+        <AppContent />
+      </DimensionsProvider>
     </ThemeProvider>
   );
 }

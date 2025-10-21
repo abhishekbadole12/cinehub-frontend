@@ -24,7 +24,7 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView className="flex-1 bg-black " edges={["top"]}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView showsVerticalScrollIndicator={false} >
         <HeaderBar />
 
         {posters.length > 0 && <Carousel images={posters} />}

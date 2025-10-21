@@ -35,7 +35,6 @@ export default function MovieDetails() {
       }
     })();
   }, [id]);
-console.log(movie?.backdrop_path);
 
   if (!movie) return <Text>Loading...</Text>;
 
