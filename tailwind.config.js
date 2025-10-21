@@ -8,7 +8,13 @@ module.exports = {
     "./app/movie/[id].{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+     colors: {
+        primary: "#ef4444", // use for active elements, buttons, highlights
+        secondary: "#1f2937", // example: dark text or secondary background
+        accent: "#fbbf24", // example: accent highlights
+      },
+    },
   },
 
   presets: [require("nativewind/preset")],

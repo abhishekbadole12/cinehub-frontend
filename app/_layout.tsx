@@ -11,8 +11,6 @@ export const unstable_settings = {
 };
 
 export default function RootLayout() {
-  // const colorScheme = useColorScheme();
-
   return (
     <ThemeProvider>
       <AppContent />
@@ -25,11 +23,10 @@ function AppContent() {
 
   return (
     <>
-      <StatusBar style={theme === "dark" ? "light" : "dark"} />
+      <StatusBar style="light" backgroundColor="transparent" translucent />
       <Stack
         screenOptions={{
-          headerStyle: { backgroundColor: theme === "dark" ? "#000" : "#fff" },
-          headerTintColor: theme === "dark" ? "#fff" : "#000",
+          headerShown: false,
         }}
       >
         <Stack.Screen name="index" />
