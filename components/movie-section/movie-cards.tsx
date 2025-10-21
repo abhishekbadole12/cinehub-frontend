@@ -21,16 +21,20 @@ export default function MovieCard({ id, title, posterPath }: MovieCardProps) {
     >
       <Image
         source={{ uri: imageUrl }}
-        className="w-[140px] h-[210px] rounded-xl"
+        className="w-[140px] h-[210px] rounded-2xl"
+        resizeMode="cover"
       />
+      
       <Text
-        className="text-white text-sm font-semibold mt-2 text-center"
+        className="text-white text-sm font-semibold mt-2 ml-2 text-start"
         numberOfLines={1}
       >
         {title}
       </Text>
-      <TouchableOpacity className="mt-2 bg-red-500 py-1.5 rounded-full">
-        <Text className="text-center text-white text-xs font-semibold">
+
+      {/* Book Now button */}
+      <TouchableOpacity className="mt-2.5 bg-red-500 py-2 rounded-full">
+        <Text className="text-center text-white text-sm font-semibold">
           Book Now
         </Text>
       </TouchableOpacity>
