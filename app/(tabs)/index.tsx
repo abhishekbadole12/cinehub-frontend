@@ -8,10 +8,10 @@ import HeaderBar from "@/components/header-bar";
 import Carousel from "@/components/crousel";
 import Section from "@/components/section/section";
 //
-import { Movie } from "@/types/movie";
+import { IMovie } from "@/types/movie";
 
 export default function HomeScreen() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
 
   useEffect(() => {
     (async () => {

@@ -42,7 +42,6 @@ export default function MovieDetails() {
     : `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
   return (
-
     <ScrollView
       className="flex-1 bg-[#0d0d0d]"
       showsVerticalScrollIndicator={false}
