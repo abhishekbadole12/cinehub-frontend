@@ -1,0 +1,168 @@
+{
+  "cities": [
+    {
+      "cityId": "MUM001",
+      "name": "Mumbai",
+      "theatres": [
+        {
+          "theatreId": "PVR_INORBIT_MALAD",
+          "name": "PVR Inorbit Mall",
+          "address": "Inorbit Mall, Link Road, Malad West, Mumbai",
+          "latitude": 19.1735,
+          "longitude": 72.8358,
+          "screens": [
+            {
+              "screenId": "SCR001",
+              "name": "Audi 1",
+              "seatingCapacity": 180,
+              "seatLayout": {
+                "rows": [
+                  { "row": "A", "seats": 10 },
+                  { "row": "B", "seats": 10 },
+                  { "row": "C", "seats": 12 },
+                  { "row": "D", "seats": 12 },
+                  { "row": "E", "seats": 14 },
+                  { "row": "F", "seats": 14 },
+                  { "row": "G", "seats": 16 },
+                  { "row": "H", "seats": 16 }
+                ],
+                "seatTypes": {
+                  "SILVER": ["A", "B", "C"],
+                  "GOLD": ["D", "E", "F"],
+                  "PLATINUM": ["G", "H"]
+                },
+                "pricing": {
+                  "SILVER": 180,
+                  "GOLD": 250,
+                  "PLATINUM": 320
+                }
+              },
+              "showtimes": [
+                {
+                  "showId": "SHOW_M2025_001",
+                  "movieTmdbId": 999999,  
+                  "language": "Hindi",
+                  "format": "2D",
+                  "startTime": "2025-10-22T10:30:00",
+                  "endTime": "2025-10-22T13:00:00",
+                  "availableSeats": 164
+                },
+                {
+                  "showId": "SHOW_M2025_002",
+                  "movieTmdbId": 888888,  
+                  "language": "English",
+                  "format": "IMAX 3D",
+                  "startTime": "2025-10-22T14:15:00",
+                  "endTime": "2025-10-22T17:00:00",
+                  "availableSeats": 132
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "theatreId": "INOX_THANE",
+          "name": "INOX Thane",
+          "address": "Viviana Mall, Eastern Express Highway, Thane West",
+          "latitude": 19.2183,
+          "longitude": 72.9781,
+          "screens": [
+            {
+              "screenId": "SCR002",
+              "name": "Audi 2",
+              "seatingCapacity": 150,
+              "seatLayout": {
+                "rows": [
+                  { "row": "A", "seats": 8 },
+                  { "row": "B", "seats": 8 },
+                  { "row": "C", "seats": 10 },
+                  { "row": "D", "seats": 12 },
+                  { "row": "E", "seats": 12 },
+                  { "row": "F", "seats": 14 },
+                  { "row": "G", "seats": 14 }
+                ],
+                "seatTypes": {
+                  "SILVER": ["A", "B"],
+                  "GOLD": ["C", "D", "E"],
+                  "PLATINUM": ["F", "G"]
+                },
+                "pricing": {
+                  "SILVER": 150,
+                  "GOLD": 220,
+                  "PLATINUM": 280
+                }
+              },
+              "showtimes": [
+                {
+                  "showId": "SHOW_T2025_001",
+                  "movieTmdbId": 999999,  
+                  "language": "Hindi",
+                  "format": "2D",
+                  "startTime": "2025-10-22T09:00:00",
+                  "endTime": "2025-10-22T11:45:00",
+                  "availableSeats": 139
+                },
+                {
+                  "showId": "SHOW_T2025_002",
+                  "movieTmdbId": 777777,  
+                  "language": "Tamil (Dubbed)",
+                  "format": "2D",
+                  "startTime": "2025-10-22T12:30:00",
+                  "endTime": "2025-10-22T15:15:00",
+                  "availableSeats": 97
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "movies": [
+    {
+      "movieTmdbId": 999999,
+      "title": "Tiger 4: The Final Mission",
+      "language": "Hindi",
+      "genre": ["Action", "Thriller"],
+      "duration": 150,
+      "rating": 4.5,
+      "certificate": "UA",
+      "releaseDate": "2025-10-20",
+      "posterUrl": "https://example.com/tiger4.jpg",
+      "trailerUrl": "https://youtube.com/watch?v=tiger4trailer",
+      "cast": ["Salman Khan", "Katrina Kaif", "Emraan Hashmi"],
+      "director": "Ali Abbas Zafar",
+      "description": "Tiger returns for his toughest mission yet — to protect his family and country from an international threat."
+    },
+    {
+      "movieTmdbId": 888888,
+      "title": "The Batman: Dark Reign",
+      "language": "English",
+      "genre": ["Action", "Crime", "Superhero"],
+      "duration": 165,
+      "rating": 4.8,
+      "certificate": "UA",
+      "releaseDate": "2025-10-10",
+      "posterUrl": "https://example.com/batman-darkreign.jpg",
+      "trailerUrl": "https://youtube.com/watch?v=batmandarkreign",
+      "cast": ["Robert Pattinson", "Zoë Kravitz", "Paul Dano"],
+      "director": "Matt Reeves",
+      "description": "Gotham faces its darkest hour as The Batman battles a rising criminal empire threatening the city’s soul."
+    },
+    {
+      "movieTmdbId": 777777,
+      "title": "Leo 2: The Rise",
+      "language": "Tamil",
+      "genre": ["Action", "Drama"],
+      "duration": 140,
+      "rating": 4.3,
+      "certificate": "U",
+      "releaseDate": "2025-09-30",
+      "posterUrl": "https://example.com/leo2.jpg",
+      "trailerUrl": "https://youtube.com/watch?v=leo2trailer",
+      "cast": ["Vijay", "Trisha Krishnan", "Sanjay Dutt"],
+      "director": "Lokesh Kanagaraj",
+      "description": "Leo returns to protect his legacy as the dark forces of his past threaten to resurface."
+    }
+  ]
+}

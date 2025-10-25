@@ -12,6 +12,7 @@ import { IMovieDetails } from "@/types/movie";
 import MetaInfo from "@/components/movie-details/meta-info";
 import ProductionInfo from "@/components/movie-details/production-info";
 import TrailerSection from "@/components/movie-details/trailer-section";
+import CustomHeader from "@/components/common/header";
 
 export default function MovieDetails() {
   const { id } = useLocalSearchParams();
@@ -41,9 +42,14 @@ export default function MovieDetails() {
     : `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
   return (
-    <View className="flex-1 bg-[#0d0d0d]">
+
+    <ScrollView
+      className="flex-1 bg-[#0d0d0d]"
+      showsVerticalScrollIndicator={false}
+      contentContainerStyle={{ paddingBottom: 100 }}
+    >
       {/* Hero Section */}
-      <View className="relative">
+      <View className="">
         <Image
           source={{ uri: IMG_URL }}
           style={{ width, height: width * 0.85 }}
@@ -51,33 +57,17 @@ export default function MovieDetails() {
           resizeMode="cover"
         />
 
-        {/* Top Overlay Buttons */}
-        <View className="absolute top-14 left-4 right-4 flex-row justify-between items-center">
-          <TouchableOpacity
-            onPress={() => router.back()}
-            className="bg-black/50 p-2 rounded-full"
-          >
-            <ArrowLeft size={22} color="#fff" />
-          </TouchableOpacity>
-
-          <View className="flex-row space-x-2">
-            <TouchableOpacity className="bg-black/50 p-2 rounded-full">
-              <Share2 size={20} color="#fff" />
-            </TouchableOpacity>
-
-            <TouchableOpacity className="bg-black/50 p-2 rounded-full ml-2">
-              <MoreVertical size={20} color="#fff" />
-            </TouchableOpacity>
-          </View>
-        </View>
+        <CustomHeader
+          transparent
+          showBack
+          showShare
+          showMore
+          onSharePress={() => console.log("Share movie")}
+        />
       </View>
 
       {/* Movie Info Section */}
-      <ScrollView
-        className="flex-1 px-4 mt-2"
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 80 }}
-      >
+      <View className="flex-1 px-4 mt-2">
         {/* Title & Rating */}
         <View className="flex-row justify-between items-center mt-6">
           <Text className="text-white text-2xl font-semibold flex-1 mr-2">
@@ -135,7 +125,8 @@ export default function MovieDetails() {
           </Text>
           <Text className="text-gray-500">Coming soon...</Text>
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
+    // </View>
   );
 }
