@@ -1,5 +1,6 @@
 import { View, Text, TextInput, Image, Pressable } from "react-native";
 import React, { useState } from "react";
+import { LucideEye } from "lucide-react-native";
 // import { icons } from "../constants";
 
 interface IFormField {
@@ -33,10 +34,10 @@ const FormField = ({
   errorMsg,
   editable = true,
   keyboardType = "none",
-  secureTextEntry,
+  secureTextEntry = false,
   ...props
 }: IFormField) => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(secureTextEntry);
   const [isFocused, setIsFocused] = useState(false);
 
   const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
@@ -54,14 +55,14 @@ const FormField = ({
       </Text>
 
       <View
-        className={`w-full h-14 px-4 rounded-lg bg-slate-200 flex flex-row items-center  focus:border-zinc-500 ${
-          errorMsg ? "border-2 border-red-600 " : ""
+        className={`w-full h-14 px-4 rounded-lg bg-slate-200 flex flex-row items-center border-2 focus:border-zinc-500 ${
+          errorMsg ? "border-red-600 " : ""
         }`}
       >
         <Icon size={18} color="#aaa" />
 
         <TextInput
-          className={`w-full max-w-[91%] text-base font-semibold leading-5 ml-3 ${textStyles} ${
+          className={`w-full max-w-[88%] text-base font-semibold leading-5 ml-3 ${textStyles} ${
             editable ? "text-zinc-800" : "text-gray-500"
           }`}
           inputMode={keyboardType}
@@ -70,7 +71,7 @@ const FormField = ({
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
           onChangeText={handleChangeText}
-          secureTextEntry={secureTextEntry}
+          secureTextEntry={showPassword}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           editable={editable}
@@ -80,20 +81,14 @@ const FormField = ({
         {/* When Passoword */}
         {title === "Password" && value !== "" && (
           <Pressable onPress={togglePasswordVisibility}>
-            {/* <Image
-              source={!showPassword ? icons.eye : icons.eyeHide}
-              className="w-6 h-6"
-              resizeMode="contain"
-              // tintColor="#71717A"
-              tintColor={errorMsg ? "#dc2626" : "#000"}
-            /> */}
+            {!showPassword ? <LucideEye size={18} /> : <LucideEye size={18} />}
           </Pressable>
         )}
 
         {/* Error Msg */}
         {errorMsg && (
           // <Text className="text-xs font-medium text-red-500 absolute -bottom-[18px] left-2">
-          <Text className="text-xs font-medium text-red-600 absolute -bottom-[18px] left-2">
+          <Text className="text-sm font-medium text-red-600 absolute -bottom-[20px] left-2">
             {errorMsg}
           </Text>
         )}
