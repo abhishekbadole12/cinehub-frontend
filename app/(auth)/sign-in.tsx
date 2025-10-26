@@ -8,6 +8,7 @@ import { LucideMail, Lock } from "lucide-react-native";
 //
 import FormField from "@/components/common/form-field";
 import CustomButton from "@/components/common/custom-button";
+import { useBoolean } from "@/hooks/use-boolean";
 
 const SignIn = () => {
   const router = useRouter();
@@ -16,6 +17,9 @@ const SignIn = () => {
     email: "",
     password: "",
   });
+  const { value : rememberMe, toggle } = useBoolean(false);
+
+  const [errorMsg, setErrorMsg] = useState({ message: "" });
 
   // Handle input change
   const handleChange = (key: "email" | "password", value: string) => {
@@ -23,7 +27,12 @@ const SignIn = () => {
   };
 
   // HandleSubmit
-  const handleSubmit = async () => {};
+  const handleSubmit = async () => {
+    console.log({
+      ...form,
+      rememberMe,
+    });
+  };
 
   return (
     <SafeAreaView className="flex-1 bg-[#0d0d0d]">
@@ -50,6 +59,7 @@ const SignIn = () => {
               keyboardType="email"
               placeholder="Enter your email"
               otherStyles="mb-6"
+              errorMsg={errorMsg.message}
             />
 
             <FormField
@@ -60,21 +70,15 @@ const SignIn = () => {
               placeholder="Enter your password"
               secureTextEntry
               otherStyles="mb-4"
+              errorMsg={errorMsg.message}
             />
 
-            {/* Error Message */}
-            {/* {error ? (
-              <Text className="text-red-500 mt-3 text-sm text-center">
-                {error}
-              </Text>
-            ) : null} */}
-
-            <View className="flex-row justify-between items-center my-3">
+            <View className="flex-row justify-between items-center my-3 px-1">
               <TouchableOpacity
                 activeOpacity={0.8}
                 className="flex-row items-center space-x-2"
               >
-                <Checkbox className="mr-3" />
+                <Checkbox className="mr-3" onValueChange={toggle} value={rememberMe}/>
 
                 <Text className="text-gray-300 text-base">Remember me</Text>
               </TouchableOpacity>
