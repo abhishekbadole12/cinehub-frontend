@@ -7,6 +7,7 @@ import "../global.css";
 // Context
 import { ThemeProvider, useTheme } from "@/context/ThemeContext";
 import { DimensionsProvider } from "@/context/useDimensionContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 export const unstable_settings = {
   anchor: "(tabs)",
@@ -15,9 +16,11 @@ export const unstable_settings = {
 export default function RootLayout() {
   return (
     <ThemeProvider>
-      <DimensionsProvider>
-        <AppContent />
-      </DimensionsProvider>
+      <AuthProvider>
+        <DimensionsProvider>
+          <AppContent />
+        </DimensionsProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }

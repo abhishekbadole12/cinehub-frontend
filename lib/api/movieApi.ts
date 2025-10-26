@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api"; // backend
+const API_URL = process.env.EXPO_PUBLIC_API_URL; // backend
 
 export const getTrendingMovies = async () => {
   const { data } = await axios.get(`${API_URL}/trending/movie/week`);
