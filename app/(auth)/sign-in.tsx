@@ -42,7 +42,7 @@ const SignIn = () => {
       >
         <View className="mt-16 px-4">
           {/* Header */}
-          <Text className="text-white text-3xl text-center font-bold">
+          <Text className="text-white text-4xl text-center font-bold">
             Welcome Back 👋
           </Text>
           <Text className="text-gray-400 text-center mt-2">

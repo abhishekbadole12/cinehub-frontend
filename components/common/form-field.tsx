@@ -1,6 +1,6 @@
 import { View, Text, TextInput, Image, Pressable } from "react-native";
 import React, { useState } from "react";
-import { LucideEye } from "lucide-react-native";
+import { LucideEye, LucideEyeOff } from "lucide-react-native";
 // import { icons } from "../constants";
 
 interface IFormField {
@@ -55,7 +55,7 @@ const FormField = ({
       </Text>
 
       <View
-        className={`w-full h-14 px-4 rounded-lg bg-slate-200 flex flex-row items-center border-2 focus:border-zinc-500 ${
+        className={`w-full h-14 px-4 rounded-lg bg-input-bg flex flex-row items-center border-2 border-input-bg  focus:bg-input-bg-focus focus:border-input-bg-focus ${
           errorMsg ? "border-red-600 " : ""
         }`}
       >
@@ -63,7 +63,7 @@ const FormField = ({
 
         <TextInput
           className={`w-full max-w-[88%] text-base font-semibold leading-5 ml-3 ${textStyles} ${
-            editable ? "text-zinc-800" : "text-gray-500"
+            editable ? "text-white" : "text-gray-500"
           }`}
           inputMode={keyboardType}
           value={value}
@@ -81,7 +81,7 @@ const FormField = ({
         {/* When Passoword */}
         {title === "Password" && value !== "" && (
           <Pressable onPress={togglePasswordVisibility}>
-            {!showPassword ? <LucideEye size={18} /> : <LucideEye size={18} />}
+            {!showPassword ? <LucideEye size={18} color={"white"}/> : <LucideEyeOff size={18} color={"white"}/>}
           </Pressable>
         )}
 

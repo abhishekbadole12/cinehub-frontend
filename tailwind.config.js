@@ -9,10 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-     colors: {
+      colors: {
         primary: "#ef4444", // use for active elements, buttons, highlights
         secondary: "#1f2937", // example: dark text or secondary background
         accent: "#fbbf24", // example: accent highlights
+        "input-bg": "#1a1a1a",
+        "input-bg-focus": "#2f2f2f",
       },
     },
   },
